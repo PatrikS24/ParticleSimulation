@@ -3,6 +3,7 @@ package Particlelogic;
 public class Sparks extends Particle {
 
     static float startSpeed = 5;
+    int lifespan = 100;
 
     public Sparks(ParticleEmitter p) {
         super(p);
@@ -20,7 +21,7 @@ public class Sparks extends Particle {
     }
 
     public boolean isAlive() {
-        if (age > 100) {
+        if (age > lifespan) {
             return true;
         } else {
             return false;
