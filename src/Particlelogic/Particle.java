@@ -17,5 +17,5 @@ public abstract class Particle {
     int getAge() {return age;} // returns the age of the particle counted by how many updates the particle has had.
     public int getPositionX() {return positionX;}
     public int getPositionY() {return positionY;}
-    double getSpeed() {return velocityX + velocityY;} // Returns the startSpeed of the particle.
+    double getSpeed() {return Math.sqrt(Math.pow(velocityX, 2) + Math.pow(velocityY, 2));} // Returns the startSpeed of the particle.
 }
