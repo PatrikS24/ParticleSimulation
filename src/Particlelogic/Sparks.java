@@ -7,8 +7,8 @@ public class Sparks extends Particle {
 
     public Sparks(ParticleEmitter p) {
         super(p);
-        velocityX = (Math.random() * startSpeed);
-        velocityY = (Math.random() * startSpeed);
+        velocityX = ((Math.random() * 4 - 2) * startSpeed);
+        velocityY = ((Math.random() * 4 - 2) * startSpeed);
     }
 
     public void updateParticle() {
