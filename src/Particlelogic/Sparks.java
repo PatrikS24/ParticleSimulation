@@ -17,11 +17,11 @@ public class Sparks extends Particle {
         velocityY -= gravity;
         positionX += velocityX;
         positionY += velocityY;
-        age += 1;
+        incrementAge();
     }
 
     public boolean isAlive() {
-        if (age > lifespan) {
+        if (getAge() > lifespan) {
             return true;
         } else {
             return false;

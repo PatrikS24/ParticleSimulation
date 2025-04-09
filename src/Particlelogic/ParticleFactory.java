@@ -1,7 +1,7 @@
 package Particlelogic;
 
 public class ParticleFactory {
-    ParticleEmitter particleEmitter;
+    private ParticleEmitter particleEmitter;
 
     public ParticleFactory(ParticleEmitter p) {
         particleEmitter = p;
