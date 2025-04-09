@@ -1,13 +1,10 @@
 package Particlelogic;
 
 public class ParticleFactory {
-    int particlePosX;
-    int particlePosY;
     ParticleEmitter particleEmitter;
 
     public ParticleFactory(ParticleEmitter p) {
-        particlePosX = p.positionX;
-        particlePosY = p.positionY;
+        particleEmitter = p;
     }
 
     public Particle createParticle(ParticleType particleType) {
