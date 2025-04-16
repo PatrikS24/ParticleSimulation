@@ -1,4 +1,4 @@
-package Particlelogic;
+package Model;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -23,6 +23,7 @@ public class ParticleEmitter {
     public ParticleType getType() {return type;}
 
     public void updateParticles() {
+        addParticle();
         Iterator<Particle> iterator = particleList.iterator();
         while (iterator.hasNext()) {
             Particle particle = iterator.next();

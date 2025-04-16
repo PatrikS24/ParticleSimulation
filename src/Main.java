@@ -1,4 +1,4 @@
-import UI.MyFrame;
+import View.MyFrame;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,8 +1,8 @@
-package UI_patricle_manager;
+package Controller;
 
-import Particlelogic.Particle;
-import Particlelogic.ParticleEmitter;
-import Particlelogic.ParticleType;
+import Model.Particle;
+import Model.ParticleEmitter;
+import Model.ParticleType;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

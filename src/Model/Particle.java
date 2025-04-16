@@ -1,4 +1,4 @@
-package Particlelogic;
+package Model;
 public abstract class Particle {
     int positionX;
     int positionY;
@@ -19,6 +19,13 @@ public abstract class Particle {
     public int getAge() {return age;} // returns the age of the particle counted by how many updates the particle has had.
     void incrementAge() {age++;}
     double getSpeed() {return Math.sqrt(Math.pow(velocityX, 2) + Math.pow(velocityY, 2));} // Returns the startSpeed of the particle.
-    abstract void updateParticle(); //updates position, velocity and life status of a particle.
+    public void updateParticle() {
+        velocityY *= 0.8f;
+        velocityX *= 0.8f;
+        velocityY -= gravity;
+        positionX += velocityX;
+        positionY += velocityY;
+        incrementAge();
+    }
     abstract boolean isAlive(); // Returns true if the particle is alive, false if it is dead.
     }

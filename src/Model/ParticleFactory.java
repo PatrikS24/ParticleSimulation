@@ -1,4 +1,4 @@
-package Particlelogic;
+package Model;
 
 public class ParticleFactory {
     private ParticleEmitter particleEmitter;
