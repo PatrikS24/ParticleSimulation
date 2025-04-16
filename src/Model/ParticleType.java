@@ -1,4 +1,4 @@
-package Particlelogic;
+package Model;
 
 public enum ParticleType {
     SPARKS,

@@ -1,9 +1,8 @@
-package UI_patricle_manager;
+package Controller;
 
-import Particlelogic.Particle;
-import Particlelogic.ParticleEmitter;
-import Particlelogic.ParticleType;
-import Particlelogic.Sparks;
+import Model.Particle;
+import Model.ParticleEmitter;
+import Model.ParticleType;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -13,8 +12,8 @@ public class EmitterManager {
 
     ArrayList<ParticleEmitter> emitters;
     
-    public void createSparksEmitter(int posX, int posY) {
-        ParticleEmitter emitter = new ParticleEmitter(ParticleType.SPARKS,posX, posY);
+    public void createSparksEmitter(ParticleType type, int posX, int posY) {
+        ParticleEmitter emitter = new ParticleEmitter(type, posX, posY);
         emitters.add(emitter);
     }
 
