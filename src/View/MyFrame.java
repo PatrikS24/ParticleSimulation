@@ -9,8 +9,9 @@ public class MyFrame extends JFrame {
         this.setLocationRelativeTo(null);
         this.setTitle("Particle Simulation");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        MyPanel panel = new MyPanel();
+        this.add(panel);
         this.setVisible(true);
-
 
     }
 }

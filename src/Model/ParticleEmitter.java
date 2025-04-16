@@ -35,11 +35,11 @@ public class ParticleEmitter {
         }
     }
 
-    void addParticle() {
+    public void addParticle() {
         particleList.add(particleFactory.createParticle(type));
     }
 
-    void addParticle(int numberOfParticles) throws Exception {
+    public void addParticle(int numberOfParticles) {
         for (int i = 0; i <= numberOfParticles; i++) {
             addParticle();
         }

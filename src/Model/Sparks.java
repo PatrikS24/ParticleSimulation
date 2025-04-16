@@ -12,7 +12,7 @@ public class Sparks extends Particle {
     }
 
     public boolean isAlive() {
-        if (getAge() > lifespan) {
+        if (getAge() < lifespan) {
             return true;
         } else {
             return false;
