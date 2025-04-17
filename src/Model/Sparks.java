@@ -5,7 +5,7 @@ import java.awt.*;
 public class Sparks extends Particle {
 
     static float startSpeed = 5;
-    int lifespan = 100;
+    int lifespan = 300;
 
     public Sparks(ParticleEmitter p) {
         super(p);

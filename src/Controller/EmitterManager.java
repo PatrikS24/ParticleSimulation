@@ -20,7 +20,7 @@ public class EmitterManager {
     
     public void createEmitter(ParticleType type, int posX, int posY) {
         ParticleEmitter emitter = new ParticleEmitter(type, posX, posY);
-        emitter.addParticle(35);
+        emitter.addParticle(1);
         emitters.add(emitter);
     }
 
@@ -29,8 +29,9 @@ public class EmitterManager {
         // Set the color you want to fill
         g2d.setColor(Color.black);
         // Fill the entire image with the color
-        g2d.fillRect(0, 0, 500, 500);
+        g2d.fillRect(0, 0, panel.getWidth(), panel.getHeight());
         g2d.dispose();
+
         for (ParticleEmitter emitter : emitters) {
             emitter.updateParticles();
             emitter.particleList.removeIf(p -> p.getPositionX() >= panel.getWidth() || p.getPositionX() <= 0);

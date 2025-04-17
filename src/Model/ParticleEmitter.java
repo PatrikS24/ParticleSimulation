@@ -23,10 +23,11 @@ public class ParticleEmitter {
     public ParticleType getType() {return type;}
 
     public void updateParticles() {
-        addParticle();
+        addParticle(5);
         Iterator<Particle> iterator = particleList.iterator();
         while (iterator.hasNext()) {
             Particle particle = iterator.next();
+            particle.incrementAge();
             if (!particle.isAlive()) {
                 iterator.remove();
             } else {

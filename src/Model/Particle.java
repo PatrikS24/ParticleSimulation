@@ -6,7 +6,8 @@ public abstract class Particle {
     double velocityY;
 
     private int age = 0;
-    static float gravity = 2;
+    static float gravity = 1.5f;
+    static float airResistance = 0.9f;
 
     public Particle(ParticleEmitter p) {
         positionX = p.getPositionX();
@@ -21,8 +22,8 @@ public abstract class Particle {
     void incrementAge() {age++;}
     double getSpeed() {return Math.sqrt(Math.pow(velocityX, 2) + Math.pow(velocityY, 2));} // Returns the startSpeed of the particle.
     public void updateParticle() {
-        velocityY *= 0.8f;
-        velocityX *= 0.8f;
+        velocityY *= airResistance;
+        velocityX *= airResistance;
         velocityY += gravity;
         positionX += velocityX;
         positionY += velocityY;
