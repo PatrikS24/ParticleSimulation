@@ -15,7 +15,9 @@ public class Sparks extends Particle {
 
     @Override
     public int getColor() {
-        return new Color(255,255,0,lifespan/getAge()).getRGB();
+        int colorValue = (int)(255 * (1 - ((float)getAge()/(float)lifespan)));
+        int exponentialColorValue = (int)(255 * Math.pow(colorValue / 255.0, 0.3));
+        return new Color(exponentialColorValue, exponentialColorValue, 0).getRGB();
     }
 
     public boolean isAlive() {
