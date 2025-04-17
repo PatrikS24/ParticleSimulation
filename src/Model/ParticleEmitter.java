@@ -23,10 +23,11 @@ public class ParticleEmitter {
     public ParticleType getType() {return type;}
 
     public void updateParticles() {
-        addParticle();
+        addParticle(3);
         Iterator<Particle> iterator = particleList.iterator();
         while (iterator.hasNext()) {
             Particle particle = iterator.next();
+            particle.incrementAge();
             if (!particle.isAlive()) {
                 iterator.remove();
             } else {
@@ -35,11 +36,11 @@ public class ParticleEmitter {
         }
     }
 
-    void addParticle() {
+    public void addParticle() {
         particleList.add(particleFactory.createParticle(type));
     }
 
-    void addParticle(int numberOfParticles) throws Exception {
+    public void addParticle(int numberOfParticles) {
         for (int i = 0; i <= numberOfParticles; i++) {
             addParticle();
         }

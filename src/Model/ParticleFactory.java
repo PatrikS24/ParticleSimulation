@@ -8,13 +8,12 @@ public class ParticleFactory {
     }
 
     public Particle createParticle(ParticleType particleType) {
-        Particle returnParticle = null;
+        Particle newParticle = null;
 
         switch (particleType) {
-            case SPARKS:
-                returnParticle = new Sparks(particleEmitter);
-                break;
+            case ParticleType.SPARKS:
+                newParticle = new Sparks(particleEmitter);
         }
-        return returnParticle;
+        return newParticle;
     }
 }
