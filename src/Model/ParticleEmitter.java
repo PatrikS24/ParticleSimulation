@@ -23,7 +23,7 @@ public class ParticleEmitter {
     public ParticleType getType() {return type;}
 
     public void updateParticles() {
-        addParticle(5);
+        addParticle(3);
         Iterator<Particle> iterator = particleList.iterator();
         while (iterator.hasNext()) {
             Particle particle = iterator.next();

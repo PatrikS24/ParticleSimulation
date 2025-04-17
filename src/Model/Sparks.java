@@ -5,7 +5,7 @@ import java.awt.*;
 public class Sparks extends Particle {
 
     static float startSpeed = 5;
-    int lifespan = 300;
+    int lifespan = (int)(Math.random() * 50 - 30) + 30;
 
     public Sparks(ParticleEmitter p) {
         super(p);

@@ -21,11 +21,18 @@ public class MyPanel extends JPanel implements ActionListener {
         image = createBufferedImage();
         timer = new Timer(16,this);
         timer.start();
-        emitterManager.createEmitter(ParticleType.SPARKS, 250,250);
+        emitterManager.createEmitter(ParticleType.SPARKS, 250,150);
     }
 
     public BufferedImage createBufferedImage() {
-        return new BufferedImage(500, 500, TYPE_INT_ARGB);
+        BufferedImage img = new BufferedImage(500, 500, TYPE_INT_ARGB);
+        Graphics2D g2d = img.createGraphics();
+        // Set the color you want to fill
+        g2d.setColor(Color.black);
+        // Fill the entire image with the color
+        g2d.fillRect(0, 0, this.getWidth(), this.getHeight());
+        g2d.dispose();
+        return img;
     }
 
     @Override
