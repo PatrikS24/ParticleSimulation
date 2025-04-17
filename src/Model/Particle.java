@@ -1,7 +1,7 @@
 package Model;
 public abstract class Particle {
-    int positionX;
-    int positionY;
+    private int positionX;
+    private int positionY;
     double velocityX;
     double velocityY;
 
