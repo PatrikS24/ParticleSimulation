@@ -23,7 +23,7 @@ public abstract class Particle {
     public void updateParticle() {
         velocityY *= 0.8f;
         velocityX *= 0.8f;
-        velocityY -= gravity;
+        velocityY += gravity;
         positionX += velocityX;
         positionY += velocityY;
         incrementAge();

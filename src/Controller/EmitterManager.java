@@ -4,6 +4,7 @@ import Model.Particle;
 import Model.ParticleEmitter;
 import Model.ParticleType;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -11,6 +12,11 @@ import java.util.ArrayList;
 public class EmitterManager {
 
     ArrayList<ParticleEmitter> emitters = new ArrayList<ParticleEmitter>();
+    JPanel panel;
+
+    public EmitterManager(JPanel panel) {
+        this.panel = panel;
+    }
     
     public void createEmitter(ParticleType type, int posX, int posY) {
         ParticleEmitter emitter = new ParticleEmitter(type, posX, posY);
@@ -27,6 +33,8 @@ public class EmitterManager {
         g2d.dispose();
         for (ParticleEmitter emitter : emitters) {
             emitter.updateParticles();
+            emitter.particleList.removeIf(p -> p.getPositionX() >= panel.getWidth() || p.getPositionX() <= 0);
+            emitter.particleList.removeIf(p -> p.getPositionY() >= panel.getHeight() || p.getPositionY() <= 0);
             for (Particle p : emitter.particleList) {
                 image.setRGB(p.getPositionX(), p.getPositionY(), p.getColor());
             }
