@@ -19,23 +19,18 @@ public class EmitterManager {
     }
 
     public BufferedImage updateImage(BufferedImage image) {
-        for (ParticleEmitter emitter : emitters) {
-            emitter.updateParticles();
-            for (Particle p : emitter.particleList) {
-                image.setRGB(p.getPositionX(), p.getPositionY(), Color.black.getRGB());
-            }
-        }
-        /*
         Graphics2D g2d = image.createGraphics();
-
         // Set the color you want to fill
         g2d.setColor(Color.black);
-
         // Fill the entire image with the color
         g2d.fillRect(0, 0, 500, 500);
         g2d.dispose();
-        */
-
+        for (ParticleEmitter emitter : emitters) {
+            emitter.updateParticles();
+            for (Particle p : emitter.particleList) {
+                image.setRGB(p.getPositionX(), p.getPositionY(), p.getColor());
+            }
+        }
         return image;
     }
 }

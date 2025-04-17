@@ -1,5 +1,7 @@
 package Model;
 
+import java.awt.*;
+
 public class Sparks extends Particle {
 
     static float startSpeed = 5;
@@ -9,6 +11,11 @@ public class Sparks extends Particle {
         super(p);
         velocityX = ((Math.random() * 4 - 2) * startSpeed);
         velocityY = ((Math.random() * 4 - 2) * startSpeed);
+    }
+
+    @Override
+    public int getColor() {
+        return new Color(255,255,0,lifespan/getAge()).getRGB();
     }
 
     public boolean isAlive() {
