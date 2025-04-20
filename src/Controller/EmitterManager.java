@@ -27,9 +27,7 @@ public class EmitterManager {
     public BufferedImage updateImage(BufferedImage image) {
 
         Graphics2D g2d = image.createGraphics();
-        // Set the color you want to fill
         g2d.setColor(new Color(0,0,0,0.8f));
-        // Fill the entire image with the color
         g2d.fillRect(0, 0, panel.getWidth(), panel.getHeight());
         g2d.dispose();
 

@@ -2,15 +2,25 @@ package Model;
 
 import java.awt.*;
 
-public class Sparks extends Particle {
+public class Spark extends Particle {
 
-    static float startSpeed = 5;
-    int lifespan = (int)(Math.random() * 50 - 30) + 30;
+    private static float startSpeed = 5;
+    private static float gravity = 1.5f;
+    private static float airResistance = 0.9f;
 
-    public Sparks(ParticleEmitter p) {
+    public Spark(ParticleEmitter p) {
         super(p);
         velocityX = ((Math.random() * 4 - 2) * startSpeed);
         velocityY = ((Math.random() * 4 - 2) * startSpeed);
+    }
+
+    public void updateParticle() {
+        velocityY *= airResistance;
+        velocityX *= airResistance;
+        velocityY += gravity;
+        positionX += velocityX;
+        positionY += velocityY;
+        incrementAge();
     }
 
     @Override
@@ -18,13 +28,5 @@ public class Sparks extends Particle {
         int colorValue = (int)(255 * (1 - ((float)getAge()/(float)lifespan)));
         int exponentialColorValue = (int)(255 * Math.pow(colorValue / 255.0, 0.3));
         return new Color(exponentialColorValue, exponentialColorValue, 0).getRGB();
-    }
-
-    public boolean isAlive() {
-        if (getAge() < lifespan) {
-            return true;
-        } else {
-            return false;
-        }
     }
 }

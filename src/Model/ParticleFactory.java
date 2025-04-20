@@ -11,8 +11,8 @@ public class ParticleFactory {
         Particle newParticle = null;
 
         switch (particleType) {
-            case ParticleType.SPARKS:
-                newParticle = new Sparks(particleEmitter);
+            case ParticleType.SPARK:
+                newParticle = new Spark(particleEmitter);
         }
         return newParticle;
     }
