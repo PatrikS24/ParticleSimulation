@@ -26,7 +26,7 @@ public class MyPanel extends JPanel implements ActionListener {
         this.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                emitterManager.createEmitter(ParticleType.SPARKS, e.getX(),e.getY());
+                emitterManager.createEmitter(ParticleType.EMBER, e.getX(),e.getY());
             }
         });
     }
