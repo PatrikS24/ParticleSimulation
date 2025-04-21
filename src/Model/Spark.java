@@ -12,6 +12,7 @@ public class Spark extends Particle {
         super(p);
         velocityX = ((Math.random() * 4 - 2) * startSpeed);
         velocityY = ((Math.random() * 4 - 2) * startSpeed);
+        lifespan = (int)(Math.random() * 50 - 30) + 30;
     }
 
     public void updateParticle() {

@@ -8,12 +8,12 @@ public class ParticleFactory {
     }
 
     public Particle createParticle(ParticleType particleType) {
-        Particle newParticle = null;
-
         switch (particleType) {
             case ParticleType.SPARK:
-                newParticle = new Spark(particleEmitter);
+                return new Spark(particleEmitter);
+            case ParticleType.EMBER:
+                return new Ember(particleEmitter);
         }
-        return newParticle;
+        return null;
     }
 }
