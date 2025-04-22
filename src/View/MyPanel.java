@@ -17,16 +17,29 @@ public class MyPanel extends JPanel implements ActionListener {
     EmitterManager emitterManager;
     BufferedImage image;
     Timer timer;
+    JButton clearButton;
+    JComboBox<ParticleTextType> comboBox;
+    ParticleTextType[] particleTypes = {new SparkTextType(), new EmberTextType()};
 
     MyPanel() {
         emitterManager = new EmitterManager(this);
         image = createBufferedImage();
         timer = new Timer(16,this);
         timer.start();
+        clearButton = new JButton("Clear");
+        comboBox = new JComboBox<>(particleTypes);
+        this.add(comboBox);
+
+        this.add(clearButton);
+
+        clearButton.addActionListener(e -> emitterManager.clearEmitters());
+
         this.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                emitterManager.createEmitter(ParticleType.EMBER, e.getX(),e.getY());
+                ParticleTextType type = (ParticleTextType)comboBox.getSelectedItem();
+
+                emitterManager.createEmitter(type.getType(), e.getX(),e.getY());
             }
         });
     }

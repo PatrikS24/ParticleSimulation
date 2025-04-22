@@ -27,7 +27,7 @@ public class Spark extends Particle {
     @Override
     public int getColor() {
         int colorValue = (int)(255 * (1 - ((float)getAge()/(float)lifespan)));
-        int exponentialColorValue = (int)(255 * Math.pow(colorValue / 255.0, 0.3));
+        int exponentialColorValue = (int)(255 * Math.pow(colorValue / 255.0, 0.1));
         return new Color(exponentialColorValue, exponentialColorValue, 0).getRGB();
     }
 }

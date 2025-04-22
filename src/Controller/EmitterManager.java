@@ -41,4 +41,8 @@ public class EmitterManager {
         }
         return image;
     }
+
+    public void clearEmitters() {
+        emitters.clear();
+    }
 }
