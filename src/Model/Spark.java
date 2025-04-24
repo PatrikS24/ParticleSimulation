@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Spark extends Particle {
 
-    private static float startSpeed = 5;
+    private static float startSpeed = 8;
     private static float gravity = 1.5f;
     private static float airResistance = 0.9f;
 
@@ -12,7 +12,7 @@ public class Spark extends Particle {
         super(p);
         velocityX = ((Math.random() * 4 - 2) * startSpeed);
         velocityY = ((Math.random() * 4 - 2) * startSpeed);
-        lifespan = (int)(Math.random() * 50 - 30) + 30;
+        lifespan = (int)(Math.random() * 30 - 10) + 10;
     }
 
     public void updateParticle() {
