@@ -9,6 +9,8 @@ public class ParticleEmitter {
     private final ParticleType type;
     public ArrayList<Particle> particleList;
     ParticleFactory particleFactory;
+    double hoseDirectionX = 0;
+    double hoseDirectionY = 1;
 
     public ParticleEmitter(ParticleType type, int posX, int posY) {
         this.type = type;

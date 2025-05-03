@@ -19,7 +19,7 @@ public class MyPanel extends JPanel implements ActionListener {
     Timer timer;
     JButton clearButton;
     JComboBox<ParticleTextType> comboBox;
-    ParticleTextType[] particleTypes = {new SparkTextType(), new EmberTextType()};
+    ParticleTextType[] particleTypes = {new SparkTextType(), new EmberTextType(), new WaterHoseTextType()};
 
     MyPanel() {
         emitterManager = new EmitterManager(this);
