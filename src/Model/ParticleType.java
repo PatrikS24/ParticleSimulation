@@ -2,5 +2,6 @@ package Model;
 
 public enum ParticleType {
     SPARK,
-    EMBER
+    EMBER,
+    WATERHOSE
 }

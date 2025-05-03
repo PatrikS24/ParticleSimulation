@@ -13,6 +13,8 @@ public class ParticleFactory {
                 return new Spark(particleEmitter);
             case ParticleType.EMBER:
                 return new Ember(particleEmitter);
+            case ParticleType.WATERHOSE:
+                return new WaterHose(particleEmitter);
         }
         return null;
     }
